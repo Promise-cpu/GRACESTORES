@@ -81,9 +81,9 @@
             top: 0;
             left: 0;
             width: 100%;
+            background: #1A1A2E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            background: linear-gradient(to right, #000000, #644903);
-            box-shadow: 0 3px 15px rgba(138, 43, 226, 0.1);
         }
 
         .navbar {
@@ -146,28 +146,41 @@
         }
 
         /* HERO 1 SECTION - Single Image (No Sliding) */
-        .hero1-section {
-            height: 90vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            margin-top: 75px;
-            background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
-        }
+        /* HERO 1 SECTION - Perfect Fit for All Screens */
+.hero1-section {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 75px;
+    background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
+}
 
-        /* Single background image (no sliding) */
-        .hero1-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+/* Single background image - Perfect fit for all screens */
+.hero1-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Changed from contain to cover */
+    background-position: center center; /* Perfectly centered */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: creates parallax effect */
+}
+
+/* Optional: Add dark overlay for better text contrast */
+.hero1-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better contrast */
+}
 
         .hero1-content {
             position: relative;
