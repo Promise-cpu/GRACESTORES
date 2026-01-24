@@ -145,78 +145,194 @@
             z-index: 1001;
         }
 
-       /* HERO 1 SECTION - Fixed Image Display */
-/* HERO 1 SECTION - Fixed Image Display */
-.hero1-section {
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: 75px;
-    background: transparent; /* Remove gradient background */
-    overflow: hidden;
-}
+        /* HERO 1 SECTION - Mobile Responsive */
+        .hero1-section {
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 75px;
+            background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
+        }
 
-.hero1-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-    z-index: 1;
-}
+        .hero1-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
 
-.hero1-bg.active {
-    opacity: 1;
-}
+        .hero1-bg.active {
+            opacity: 1;
+        }
 
-.hero1-content {
-    position: relative;
-    z-index: 3;
-    max-width: 550px;
-    width: 90%;
-    padding: 35px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 15px 40px rgba(138, 43, 226, 0.15);
-    border: 2px solid rgba(255, 215, 0, 0.3);
-    text-align: center;
-    margin: 20px;
-}
+        .hero1-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 40px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.15);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+        }
 
-.hero1-nav {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 2;
-}
-.hero1-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+        .hero1-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #9B4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
 
-.hero1-dot.active {
-    background: #FFD700;
-    transform: scale(1.3);
-    border-color: #FFD700;
-}
+        .hero1-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #1A1A2E;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero1-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero1-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .hero1-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .hero1-dot.active {
+            background: #FFD700;
+            transform: scale(1.3);
+            border-color: #FFD700;
+        }
+
+        /* HERO 2 SECTION - Image Left, Content Right */
+        .hero2-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F3E6FF 100%);
+        }
+
+        .hero2-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .hero2-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .hero2-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero2-text {
+            flex: 1;
+        }
+
+        .hero2-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #9B4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero2-text p {
+            font-size: 1.1rem;
+            color: #1A1A2E;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* HERO 3 SECTION - Image Right, Content Left */
+        .hero3-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #F6E8B1 0%, #FFFFFF 100%);
+        }
+
+        .hero3-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-direction: row-reverse;
+        }
+
+        .hero3-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .hero3-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero3-text {
+            flex: 1;
+        }
+
+        .hero3-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #9B4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero3-text p {
+            font-size: 1.1rem;
+            color: #1A1A2E;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
 
         /* FEATURES SECTION - Mobile Responsive */
         .features-section {
@@ -369,15 +485,15 @@
             line-height: 1.6;
         }
 
-        /* HERO 2 SECTION - Contact Hero - Mobile Responsive */
-        .hero2-section {
+        /* HERO 4 SECTION - Contact Hero - Mobile Responsive */
+        .hero4-section {
             padding: 80px 0;
             background: linear-gradient(135deg, #8A2BE2 0%, #1A1A2E 100%);
             color: white;
             text-align: center;
         }
 
-        .hero2-title {
+        .hero4-title {
             font-size: 2.2rem;
             margin-bottom: 25px;
             background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
@@ -487,7 +603,31 @@
                 font-size: 2.2rem;
             }
 
-            
+            .hero1-content {
+                padding: 30px 25px;
+                margin: 0 15px;
+            }
+
+            .hero2-content, .hero3-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .hero2-text h2, .hero3-text h2 {
+                font-size: 2rem;
+            }
+
+            .hero2-image img, .hero3-image img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero1-section {
+                height: 80vh;
+                min-height: 500px;
+                margin-top: 70px;
+            }
 
             .hero1-title {
                 font-size: 1.8rem;
@@ -506,6 +646,18 @@
                 width: 100%;
                 max-width: 300px;
                 margin-bottom: 10px;
+            }
+
+            .hero2-text h2, .hero3-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero2-text p, .hero3-text p {
+                font-size: 1rem;
+            }
+
+            .hero2-image img, .hero3-image img {
+                height: 300px;
             }
 
             .section-title h2 {
@@ -569,6 +721,14 @@
                 padding: 25px 20px;
             }
 
+            .hero2-text h2, .hero3-text h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero2-image img, .hero3-image img {
+                height: 250px;
+            }
+
             .section-title h2 {
                 font-size: 1.5rem;
             }
@@ -578,7 +738,7 @@
                 font-size: 0.95rem;
             }
 
-            .hero2-title {
+            .hero4-title {
                 font-size: 1.8rem;
             }
 
@@ -598,6 +758,14 @@
 
             .hero1-subtitle {
                 font-size: 0.9rem;
+            }
+
+            .hero2-text h2, .hero3-text h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero2-image img, .hero3-image img {
+                height: 220px;
             }
 
             .section-title h2 {
@@ -645,22 +813,13 @@
         </div>
     </header>
 
-    <!-- HERO 1 SECTION - Main Hero -->
+    <!-- HERO 1 SECTION - Main Hero with Sliding Images -->
     <section class="hero1-section" id="hero1">
-        <div class="hero1-bg active" style="background-image: url('GS8.jpeg');"></div>
+        <div class="hero1-bg active" style="background-image: url('GS10.jpg');"></div>
+        <div class="hero1-bg" style="background-image: url('GS11.jpg');"></div>
         <div class="hero1-bg" style="background-image: url('GS7.jpeg');"></div>
-        <div class="hero1-bg" style="background-image: url('GS9.jpeg');"></div>
         
-        <div class="container">
-            <div class="hero1-content">
-                <h1 class="hero1-title">Experience Luxury Fashion</h1>
-                <p class="hero1-subtitle">Discover the perfect blend of elegance and contemporary style. Premium collections crafted with passion and precision.</p>
-                <div class="hero1-btns">
-                    <a href="#products" class="btn">View Collections</a>
-                    <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I'm%20interested%20in%20your%20collections." target="_blank" class="btn btn-purple">
-                        <i class="fab fa-whatsapp"></i> &nbsp; Chat with Us
-                    </a>
-                </div>
+        
             </div>
         </div>
         
@@ -668,6 +827,38 @@
             <div class="hero1-dot active" data-hero="1"></div>
             <div class="hero1-dot" data-hero="2"></div>
             <div class="hero1-dot" data-hero="3"></div>
+        </div>
+    </section>
+
+    <!-- HERO 2 SECTION - Image Left, Content Right -->
+    <section class="hero2-section" id="hero2">
+        <div class="container">
+            <div class="hero2-content">
+                <div class="hero2-image">
+                    <img src="GS7.jpeg" alt="Luxury Fashion Experience">
+                </div>
+                <div class="hero2-text">
+                    <h2>Experience Luxury Fashion</h2>
+                    <p>Immerse yourself in the world of premium fashion where every detail matters. Our collections are carefully curated to bring you the finest in luxury clothing and accessories.</p>
+                    <a href="#products" class="btn">View Collections</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO 3 SECTION - Image Right, Content Left -->
+    <section class="hero3-section" id="hero3">
+        <div class="container">
+            <div class="hero3-content">
+                <div class="hero3-image">
+                    <img src="GS8.jpeg" alt="Elegant Contemporary Style">
+                </div>
+                <div class="hero3-text">
+                    <h2>Discover Perfect Elegance</h2>
+                    <p>Discover the perfect blend of elegance and contemporary style. Premium collections crafted with passion and precision, designed to make you stand out.</p>
+                    <a href="#products" class="btn btn-purple">Shop Now</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -766,10 +957,10 @@
         </div>
     </section>
 
-    <!-- HERO 2 SECTION - Contact -->
-    <section class="hero2-section" id="contact">
+    <!-- HERO 4 SECTION - Contact -->
+    <section class="hero4-section" id="contact">
         <div class="container">
-            <h2 class="hero2-title">Contact Grace Stores</h2>
+            <h2 class="hero4-title">Contact Grace Stores</h2>
             <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto;">Get in touch with us for personalized service and inquiries</p>
             
             <div class="contact-grid">
