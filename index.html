@@ -164,8 +164,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: 100% autohhh;
-            background-position: center;
+            background-size: cover;
+            background-position: center 10%;
             background-repeat: no-repeat;
         }
 
@@ -187,6 +187,26 @@
         .hero1-nav {
             display: none;
         }
+
+
+        /*HERO-1 MOBILE*/
+.hero1-bg {
+    background-size: cover;
+    background-position: center 30%; /* Good for mobile */
+}
+
+@media (min-width: 768px) {
+    .hero1-bg {
+        background-position: center 40%; /* Adjust for desktop */
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero1-bg {
+        background-position: center 50%; /* Different for large screens */
+    }
+}
+
 
         /* HERO 2 SECTION - Image Left, Content Right */
         .hero2-section {
@@ -848,7 +868,7 @@
 
     <!-- HERO 1 SECTION - Main Hero -->
     <section class="hero1-section" id="hero1">
-        <div class="hero1-bg" style="background-image: url('GS8.jpeg');"></div>
+        <div class="hero1-bg" style="background-image: url('GS11.jpg');"></div>
     </section>
 
     <!-- HERO 2 SECTION - Image Left, Content Right -->
