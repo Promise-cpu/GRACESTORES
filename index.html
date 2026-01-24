@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRACE STORES | Premium Fashion Boutique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1A1A2E;
+            line-height: 1.7;
+            background: #F3E6FF;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 42px;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            color: #1A1A2E;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.4);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, #8A2BE2 0%, #9B4DFF 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+        }
+
+        .btn-purple:hover {
+            background: linear-gradient(135deg, #7B1FA2 0%, #8A2BE2 100%);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* HEADER SECTION */
+        .header-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(to right, #000000, #8A2BE2);
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD700 0%, #9B4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 17px;
+            color: white;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #8A2BE2;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* HERO 1 SECTION - Main Hero with Sliding Images */
+        .hero1-section {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 110px;
+            background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
+        }
+
+        .hero1-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+
+        .hero1-bg.active {
+            opacity: 1;
+        }
+
+        .hero1-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 60px rgba(138, 43, 226, 0.2);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .hero1-title {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #FFD700 0%, #9B4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero1-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #1A1A2E;
+            opacity: 0.9;
+        }
+
+        .hero1-nav {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .hero1-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .hero1-dot.active {
+            background: #FFD700;
+            transform: scale(1.4);
+            border-color: #FFD700;
+        }
+
+        /* FEATURES SECTION */
+        .features-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #FFFFFF 0%, #D9B8FF 100%);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 25px;
+            color: #8A2BE2;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            border-radius: 5px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 50px 35px;
+            background: white;
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(138, 43, 226, 0.25);
+        }
+
+        .feature-icon {
+            font-size: 60px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #FFD700 0%, #9B4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #8A2BE2;
+        }
+
+        /* PRODUCTS SECTION */
+        .products-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #F6E8B1 0%, #FFFFFF 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.15);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .product-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 70px rgba(138, 43, 226, 0.3);
+        }
+
+        .product-img {
+            height: 380px;
+            overflow: hidden;
+            background: linear-gradient(45deg, #D9B8FF, #F6E8B1);
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-action {
+            padding: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .product-action .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* HERO 2 SECTION - Contact Hero */
+        .hero2-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #8A2BE2 0%, #1A1A2E 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero2-title {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .contact-card {
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER SECTION */
+        .footer-section {
+            background: #1A1A2E;
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: #F6E8B1;
+            font-size: 15px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 110px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 110px);
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 80px;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                color: #1A1A2E;
+                font-size: 1.3rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero1-title {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero1-title {
+                font-size: 2.8rem;
+            }
+
+            .hero1-content {
+                padding: 40px 30px;
+                margin: 0 20px;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid, .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-text {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero1-title {
+                font-size: 2.3rem;
+            }
+
+            .hero1-content {
+                padding: 30px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header-section">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img src="GS1.jpeg" alt="GRACE STORES" class="logo-img">
+                    <div class="logo-text">GRACE STORES</div>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#hero1">Home</a></li>
+                    <li><a href="#products">Collections</a></li>
+                    <li><a href="#features">Exclusives</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO 1 SECTION - Main Hero -->
+    <section class="hero1-section" id="hero1">
+        <div class="hero1-bg active" style="background-image: url('GS8.jpeg');"></div>
+        <div class="hero1-bg" style="background-image: url('GS7.jpeg');"></div>
+        <div class="hero1-bg" style="background-image: url('GS9.jpeg');"></div>
+        
+        <div class="container">
+            <div class="hero1-content">
+                <h1 class="hero1-title">Experience Luxury Fashion</h1>
+                <p class="hero1-subtitle">Discover the perfect blend of elegance and contemporary style. Premium collections crafted with passion and precision.</p>
+                <div style="display: flex; gap: 25px; flex-wrap: wrap;">
+                    <a href="#products" class="btn">View Collections</a>
+                    <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I'm%20interested%20in%20your%20collections." target="_blank" class="btn btn-purple">
+                        <i class="fab fa-whatsapp"></i> &nbsp; Chat with Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero1-nav">
+            <div class="hero1-dot active" data-hero="1"></div>
+            <div class="hero1-dot" data-hero="2"></div>
+            <div class="hero1-dot" data-hero="3"></div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Grace Stores Stands Out</h2>
+                <p>Experience luxury shopping with our exclusive collections and premium services</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Every piece is crafted from the finest materials with exceptional attention to detail.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Exclusive Designs</h3>
+                    <p>Unique collections that blend contemporary trends with timeless elegance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Luxury Experience</h3>
+                    <p>Personalized service and attention to detail from start to finish.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Global Delivery</h3>
+                    <p>Premium worldwide shipping with tracking and secure delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Collections</h2>
+                <p>Discover our exclusive range of premium fashion pieces</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS2.jpeg" alt="Collection 1">
+                    </div>
+                    <div class="product-action">
+                        <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I'm%20interested%20in%20Collection%201." target="_blank" class="btn btn-purple">
+                            <i class="fab fa-whatsapp"></i> &nbsp; Purchase Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS3.jpeg" alt="Collection 2">
+                    </div>
+                    <div class="product-action">
+                        <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I'm%20interested%20in%20Collection%202." target="_blank" class="btn btn-purple">
+                            <i class="fab fa-whatsapp"></i> &nbsp; Purchase Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS4.jpeg" alt="Collection 3">
+                    </div>
+                    <div class="product-action">
+                        <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I'm%20interested%20in%20Collection%203." target="_blank" class="btn btn-purple">
+                            <i class="fab fa-whatsapp"></i> &nbsp; Purchase Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS5.jpeg" alt="Collection 4">
+                    </div>
+                    <div class="product-action">
+                        <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I'm%20interested%20in%20Collection%204." target="_blank" class="btn btn-purple">
+                            <i class="fab fa-whatsapp"></i> &nbsp; Purchase Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS6.jpeg" alt="Collection 5">
+                    </div>
+                    <div class="product-action">
+                        <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I'm%20interested%20in%20Collection%205." target="_blank" class="btn btn-purple">
+                            <i class="fab fa-whatsapp"></i> &nbsp; Purchase Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO 2 SECTION - Contact -->
+    <section class="hero2-section" id="contact">
+        <div class="container">
+            <h2 class="hero2-title">Contact Grace Stores</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 50px; opacity: 0.9;">Get in touch with us for personalized service and inquiries</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>123 Luxury Avenue<br>Fashion District, NY 10001</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>(555) 123-4567<br>Mon-Fri: 10AM-8PM EST</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>contact@gracestores.com<br>info@gracestores.com</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I%20would%20like%20to%20inquire%20about%20your%20collections." target="_blank" class="btn">
+                    <i class="fab fa-whatsapp"></i> &nbsp; Message on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="logo-text" style="font-size: 3rem; margin-bottom: 30px;">GRACE STORES</div>
+            <p class="footer-text">&copy; 2023 GRACE STORES. All rights reserved. | Luxury Fashion Boutique</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Hero 1 Slider Functionality
+        const heroBgs = document.querySelectorAll('.hero1-bg');
+        const heroDots = document.querySelectorAll('.hero1-dot');
+        
+        heroDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const heroIndex = dot.getAttribute('data-hero');
+                changeHero(parseInt(heroIndex) - 1);
+                
+                heroDots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+        
+        function changeHero(index) {
+            heroBgs.forEach(bg => bg.classList.remove('active'));
+            heroBgs[index].classList.add('active');
+            heroDots.forEach(dot => dot.classList.remove('active'));
+            heroDots[index].classList.add('active');
+        }
+        
+        // Auto-rotate hero backgrounds
+        let currentHero = 0;
+        function autoRotateHero() {
+            currentHero = (currentHero + 1) % heroBgs.length;
+            changeHero(currentHero);
+        }
+        
+        let heroInterval = setInterval(autoRotateHero, 5000);
+        
+        const heroSection = document.querySelector('.hero1-section');
+        heroSection.addEventListener('mouseenter', () => {
+            clearInterval(heroInterval);
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            heroInterval = setInterval(autoRotateHero, 5000);
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
