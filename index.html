@@ -145,52 +145,49 @@
             z-index: 1001;
         }
 
-        /* HERO 1 SECTION - Mobile Responsive */
         /* HERO 1 SECTION - Single Image (No Sliding) */
-.hero1-section {
-    height: 90vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    margin-top: 75px;
-    background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
-}
+        .hero1-section {
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 75px;
+            background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
+        }
 
-/* Single background image (no sliding) */
-.hero1-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Remove opacity transition */
-}
+        /* Single background image (no sliding) */
+        .hero1-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-/* Remove the .hero1-bg.active class */
+        .hero1-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 40px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.15);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+        }
 
-.hero1-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    padding: 40px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 15px 40px rgba(138, 43, 226, 0.15);
-    border: 2px solid rgba(255, 215, 0, 0.3);
-    text-align: center;
-}
+        /* Remove navigation dots CSS */
+        .hero1-nav {
+            display: none;
+        }
 
-/* Remove navigation dots CSS */
-.hero1-nav {
-    display: none; /* Hide navigation dots */
-}
         /* HERO 2 SECTION - Image Left, Content Right */
         .hero2-section {
             padding: 80px 0;
@@ -561,8 +558,8 @@
                 margin: 0 15px;
             }
 
+            /* HERO 2 & 3 - Keep side-by-side on tablets */
             .hero2-content, .hero3-content {
-                flex-direction: column;
                 gap: 40px;
             }
 
@@ -572,6 +569,11 @@
 
             .hero2-image img, .hero3-image img {
                 height: 350px;
+            }
+            
+            /* Products grid - 2 columns on tablets */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -601,6 +603,11 @@
                 margin-bottom: 10px;
             }
 
+            /* HERO 2 & 3 - Adjust for mobile */
+            .hero2-content, .hero3-content {
+                gap: 30px;
+            }
+
             .hero2-text h2, .hero3-text h2 {
                 font-size: 1.8rem;
             }
@@ -622,9 +629,16 @@
                 padding: 0 15px;
             }
 
-            .features-grid, .products-grid {
+            /* Features grid - 1 column on mobile */
+            .features-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            /* Products grid - 2 columns on mobile */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
 
             .feature-card {
@@ -656,6 +670,49 @@
             }
         }
 
+        @media (max-width: 640px) {
+            /* HERO 2 & 3 - Switch to image left, content right for both on small mobile */
+            .hero2-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .hero3-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            /* On very small screens, reverse hero3 to match hero2 layout */
+            .hero3-content {
+                flex-direction: column !important;
+            }
+            
+            /* For hero3, we want image first, then text (same as hero2) */
+            .hero3-content {
+                flex-direction: column !important;
+            }
+
+            .hero2-text h2, .hero3-text h2 {
+                font-size: 1.6rem !important;
+                text-align: center;
+            }
+            
+            .hero2-text p, .hero3-text p {
+                font-size: 0.95rem !important;
+                text-align: center;
+            }
+            
+            .hero2-image img, .hero3-image img {
+                height: 280px;
+            }
+            
+            .btn {
+                margin: 0 auto;
+                display: block;
+                max-width: 250px;
+            }
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 0 15px;
@@ -675,7 +732,7 @@
             }
 
             .hero2-text h2, .hero3-text h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             .hero2-image img, .hero3-image img {
@@ -702,6 +759,24 @@
             .navbar {
                 padding: 12px 0;
             }
+            
+            /* Products grid - 2 columns on very small mobile */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .product-img {
+                height: 200px;
+            }
+            
+            .collection-purchase {
+                padding: 30px 15px;
+            }
+            
+            .collection-purchase h3 {
+                font-size: 1.4rem;
+            }
         }
 
         @media (max-width: 360px) {
@@ -726,7 +801,12 @@
             }
 
             .product-img {
-                height: 200px;
+                height: 180px;
+            }
+            
+            /* Products grid - keep 2 columns but adjust gap */
+            .products-grid {
+                gap: 10px;
             }
         }
 
@@ -740,56 +820,6 @@
         .nav-links {
             -webkit-overflow-scrolling: touch;
         }
-
-        /* Override mobile stacking for hero sections */
-@media (max-width: 992px) {
-    .hero2-content, .hero3-content {
-        flex-direction: row !important; /* Force side-by-side */
-        gap: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero2-content, .hero3-content {
-        gap: 30px;
-    }
-    
-    .hero2-text h2, .hero3-text h2 {
-        font-size: 1.8rem !important;
-    }
-}
-
-@media (max-width: 640px) {
-    .hero2-content, .hero3-content {
-        gap: 25px;
-    }
-    
-    .hero2-text h2, .hero3-text h2 {
-        font-size: 1.5rem !important;
-    }
-    
-    .hero2-text p, .hero3-text p {
-        font-size: 0.9rem !important;
-    }
-}
-
-/* Only stack on very small screens */
-@media (max-width: 480px) {
-    .hero2-content, .hero3-content {
-        flex-direction: column !important;
-        gap: 25px;
-    }
-    
-    .hero2-text h2, .hero3-text h2 {
-        font-size: 1.4rem !important;
-        text-align: center;
-    }
-    
-    .hero2-text p, .hero3-text p {
-        text-align: center;
-    }
-}
-
     </style>
 </head>
 <body>
@@ -816,14 +846,9 @@
         </div>
     </header>
 
-    <!-- HERO 1 SECTION - Main Hero with Sliding Images -->
+    <!-- HERO 1 SECTION - Main Hero -->
     <section class="hero1-section" id="hero1">
-      
         <div class="hero1-bg" style="background-image: url('GS11.jpg');"></div>
-        
-        
-        
-        
     </section>
 
     <!-- HERO 2 SECTION - Image Left, Content Right -->
@@ -890,14 +915,7 @@
                     <h3>Luxury Experience</h3>
                     <p>Personalized service and attention to detail from start to finish.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>Global Delivery</h3>
-                    <p>Premium worldwide shipping with tracking and secure delivery.</p>
-                </div>
+                <!-- Global Delivery removed as requested -->
             </div>
         </div>
     </section>
@@ -1019,45 +1037,6 @@
                 navLinks.classList.remove('active');
                 hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             });
-        });
-        
-        // Hero 1 Slider Functionality
-        const heroBgs = document.querySelectorAll('.hero1-bg');
-        const heroDots = document.querySelectorAll('.hero1-dot');
-        
-        heroDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const heroIndex = dot.getAttribute('data-hero');
-                changeHero(parseInt(heroIndex) - 1);
-                
-                heroDots.forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
-            });
-        });
-        
-        function changeHero(index) {
-            heroBgs.forEach(bg => bg.classList.remove('active'));
-            heroBgs[index].classList.add('active');
-            heroDots.forEach(dot => dot.classList.remove('active'));
-            heroDots[index].classList.add('active');
-        }
-        
-        // Auto-rotate hero backgrounds
-        let currentHero = 0;
-        function autoRotateHero() {
-            currentHero = (currentHero + 1) % heroBgs.length;
-            changeHero(currentHero);
-        }
-        
-        let heroInterval = setInterval(autoRotateHero, 5000);
-        
-        const heroSection = document.querySelector('.hero1-section');
-        heroSection.addEventListener('mouseenter', () => {
-            clearInterval(heroInterval);
-        });
-        
-        heroSection.addEventListener('mouseleave', () => {
-            heroInterval = setInterval(autoRotateHero, 5000);
         });
         
         // Smooth scrolling with offset for fixed header
