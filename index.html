@@ -44,8 +44,8 @@
             align-items: center;
             justify-content: center;
             padding: 16px 32px;
-            background: #eab839;
-            color: #1A1A2E;
+            background: #000000;
+            color: white;
             border: none;
             border-radius: 50px;
             font-weight: 700;
@@ -53,22 +53,22 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .btn-purple {
-            background: linear-gradient(135deg, #8A2BE2 0%, #9B4DFF 100%);
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
             color: white;
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-purple:hover {
-            background: linear-gradient(135deg, #7B1FA2 0%, #8A2BE2 100%);
+            background: linear-gradient(135deg, #333333 0%, #000000 100%);
         }
 
         section {
@@ -83,7 +83,7 @@
             width: 100%;
             z-index: 1000;
             background: linear-gradient(to right, #000000, #000000);
-            box-shadow: 0 3px 15px rgba(138, 43, 226, 0.1);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
@@ -108,9 +108,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 24px;
             font-weight: 800;
-            background: #d09707;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #d09707;
         }
 
         .nav-links {
@@ -128,7 +126,7 @@
         }
 
         .nav-links a:hover {
-            color: #FFD700;
+            color: #AAAAAA;
         }
 
         /* HAMBURGER - Hide on desktop, show on mobile */
@@ -136,8 +134,8 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
-            color: #0e0319;
-            background: white;
+            color: white;
+            background: #000000;
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -197,14 +195,11 @@
         }
 
         /* HERO 1 CONTENT - Improved alignment and styling */
-     .hero1-content {
+        .hero1-content {
             position: relative;
             z-index: 2;
             max-width: 550px;
             padding: 45px;
-            
-          
-            
             text-align: left;
             position: absolute;
             left: 80px;
@@ -213,22 +208,20 @@
         }
 
         .hero1-title {
-            font-size: 3.2rem;
+            font-size: 3.8rem;
             margin-bottom: 25px;
-            background: rgb(234, 195, 4) ;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: rgb(234, 195, 4);
             line-height: 1.1;
             letter-spacing: -0.5px;
         }
 
         .hero1-subtitle {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             color: whitesmoke;
             margin-bottom: 35px;
             opacity: 58;
             line-height: 1.7;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .hero1-btns {
@@ -237,24 +230,24 @@
             flex-wrap: wrap;
         }
 
-        /* Change hero1 button to purple */
+        /* Change hero1 button to black */
         .hero1-btns .btn {
             background: rgb(202, 169, 3);
             color: white;
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             font-weight: 700;
             letter-spacing: 0.5px;
         }
 
         .hero1-btns .btn:hover {
-            background: linear-gradient(135deg, #7B1FA2 0%, #8A2BE2 100%);
+            background: #333333;
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
         /* FEATURES SECTION */
         .features-section {
-            background: rgb(239, 224, 150);
+            background: #e5d9f5;
         }
 
         .section-title {
@@ -267,7 +260,7 @@
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
-            color: #8A2BE2;
+            color: #000000;
         }
 
         .section-title h2::after {
@@ -278,7 +271,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
             border-radius: 2px;
         }
 
@@ -303,16 +296,16 @@
             background: white;
             border-radius: 16px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.2);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .feature-icon {
+         .feature-icon {
             font-size: 48px;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #FFD700 0%, #9B4DFF 100%);
@@ -323,7 +316,7 @@
         .feature-card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
-            color: #8A2BE2;
+            color: #000000;
         }
 
         .feature-card p {
@@ -352,13 +345,13 @@
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.2);
         }
 
         .product-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         /* Desktop: Tall rectangles */
@@ -386,13 +379,13 @@
             padding: 40px 20px;
             background: linear-gradient(135deg, #F3E6FF 0%, #FFFFFF 100%);
             border-radius: 16px;
-            border: 2px solid rgba(138, 43, 226, 0.1);
+            border: 2px solid rgba(0, 0, 0, 0.1);
         }
 
         .collection-purchase h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: #8A2BE2;
+            color: #000000;
         }
 
         .collection-purchase p {
@@ -407,7 +400,7 @@
         /* HERO 4 SECTION - LIGHT PURPLE BACKGROUND */
         .hero4-section {
             padding: 80px 0;
-            background: rgb(239, 224, 150); /* Light purple */
+            background: rgb(239, 224, 150);
             color: #1A1A2E;
             text-align: center;
         }
@@ -415,9 +408,7 @@
         .hero4-title {
             font-size: 2.2rem;
             margin-bottom: 25px;
-            background: linear-gradient(135deg, #8A2BE2 0%, #9B4DFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #000000;
         }
 
         .contact-grid {
@@ -431,8 +422,7 @@
             padding: 30px 20px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 12px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
 
@@ -443,7 +433,7 @@
 
         .contact-icon {
             font-size: 36px;
-            color: #8A2BE2;
+            color: #000000;
             margin-bottom: 15px;
         }
 
@@ -461,7 +451,7 @@
         }
 
         .hero4-section .btn {
-            background: linear-gradient(135deg, #8A2BE2 0%, #9B4DFF 100%);
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
             color: white;
         }
 
@@ -477,9 +467,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #000000;
             margin-bottom: 20px;
         }
 
@@ -504,7 +492,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: linear-gradient(135deg, #8A2BE2 0%, #000000 100%);
+                background: linear-gradient(135deg, #000000 0%, #333333 100%);
                 flex-direction: column;
                 align-items: center;
                 gap: 0;
@@ -513,7 +501,7 @@
                 overflow: hidden;
                 transition: max-height 0.4s ease, padding 0.4s ease;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                border-top: 2px solid #FFD700;
+                border-top: 2px solid #000000;
             }
 
             .nav-links.active {
@@ -541,12 +529,24 @@
                 display: flex;
             }
 
-            /* Hero 1 adjustments for tablet */
+            /* Increase logo size on mobile to match hamburger */
+            .logo-img {
+                height: 45px; /* Match hamburger size */
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+
+            /* Hero 1 adjustments for tablet - REMOVE BACKGROUND BLUR */
             .hero1-content {
                 left: 40px;
                 right: 40px;
                 max-width: calc(100% - 80px);
                 padding: 35px 30px;
+                background: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
             }
 
             .hero1-title {
@@ -559,7 +559,7 @@
             }
 
             .product-img {
-                height: 350px; /* Still tall but adjusted */
+                height: 350px;
             }
         }
 
@@ -575,7 +575,9 @@
                 right: 25px;
                 max-width: calc(100% - 50px);
                 padding: 30px 25px;
-                backdrop-filter: blur(8px);
+                background: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
             }
 
             .hero1-title {
@@ -591,10 +593,13 @@
                 align-items: center;
             }
 
+            /* Make View Collections button smaller on mobile */
             .hero1-btns .btn {
                 width: 100%;
-                max-width: 300px;
+                max-width: 250px;
                 margin-bottom: 10px;
+                padding: 12px 24px;
+                font-size: 0.9rem;
             }
 
             /* Products grid for mobile: 2 columns */
@@ -604,7 +609,7 @@
             }
 
             .product-img {
-                height: 300px; /* Adjusted for mobile */
+                height: 300px;
             }
 
             .section-title h2 {
@@ -648,10 +653,20 @@
                 left: 15px;
                 right: 15px;
                 max-width: calc(100% - 30px);
+                background: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
             }
 
             .hero1-title {
                 font-size: 1.8rem;
+            }
+
+            /* Make button even smaller on very small screens */
+            .hero1-btns .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+                max-width: 220px;
             }
 
             /* Products grid for small mobile: still 2 columns */
@@ -681,6 +696,9 @@
 
             .hero1-content {
                 padding: 25px 20px;
+                background: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
             }
 
             .section-title h2 {
@@ -702,6 +720,15 @@
 
             .navbar {
                 padding: 12px 0;
+            }
+
+            /* Logo size adjustments for very small screens */
+            .logo-img {
+                height: 35px;
+            }
+
+            .logo-text {
+                font-size: 18px;
             }
 
             /* Products grid for very small mobile */
