@@ -102,7 +102,6 @@
         .logo-img {
             height: 60px;
             width: auto;
-            size: 150% !important;
         }
 
         .logo-text {
@@ -132,6 +131,7 @@
             color: #FFD700;
         }
 
+        /* HAMBURGER - Hide on desktop, show on mobile */
         .hamburger {
             display: none;
             font-size: 24px;
@@ -146,7 +146,7 @@
             z-index: 1001;
         }
 
-        /* HERO 1 SECTION - Updated with content on left side */
+        /* HERO 1 SECTION - Fading Image Slider */
         .hero1-section {
             height: 90vh;
             min-height: 600px;
@@ -155,107 +155,110 @@
             position: relative;
             overflow: hidden;
             margin-top: 75px;
-            background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
         }
 
-        /* HERO 1 SECTION - Fading Image Slider */
-.hero1-section {
-    height: 90vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    margin-top: 75px;
-}
+        /* Image slider container */
+        .hero1-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-/* Image slider container */
-.hero1-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+        /* Individual slides */
+        .hero1-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center 8%;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-/* Individual slides */
-.hero1-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center 8%;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+        /* Active slide */
+        .hero1-slide.active {
+            opacity: 1;
+        }
 
-/* Active slide */
-.hero1-slide.active {
-    opacity: 1;
-}
+        /* Add this background overlay for better text readability */
+        .hero1-slider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
 
-/* Add this background overlay for better text readability */
-.hero1-slider::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-}
+        /* HERO 1 CONTENT - Improved alignment and styling */
         .hero1-content {
             position: relative;
             z-index: 2;
-            max-width: 600px;
-            padding: 40px;
-           
-            border-radius: 16px;
-            
-            
-           
+            max-width: 550px;
+            padding: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
             text-align: left;
             position: absolute;
-            left: 50px;
+            left: 80px;
             top: 50%;
             transform: translateY(-50%);
         }
 
         .hero1-title {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            background: rgb(24, 158, 247);
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #189EF7 0%, #4DB8FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
         }
 
         .hero1-subtitle {
-            font-size: 1.1rem;
-            color: #f4f4f8;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            line-height: 1.6;
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            line-height: 1.7;
+            font-weight: 400;
         }
 
         .hero1-btns {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-           
         }
 
-        
+        /* Change hero1 button to purple */
+        .hero1-btns .btn {
+            background: linear-gradient(135deg, #8A2BE2 0%, #9B4DFF 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
 
-        /* FEATURES SECTION - Mobile Responsive */
+        .hero1-btns .btn:hover {
+            background: linear-gradient(135deg, #7B1FA2 0%, #8A2BE2 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+        }
 
-      .features-section {
-    background: whitesmoke;
-;
-}
-       
+        /* FEATURES SECTION */
+        .features-section {
+            background: whitesmoke;
+        }
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
@@ -332,15 +335,16 @@
             line-height: 1.6;
         }
 
-        /* PRODUCTS SECTION - UPDATED - Mobile Responsive */
+        /* PRODUCTS SECTION - UPDATED for desktop and mobile */
         .products-section {
             padding: 80px 0;
             background: linear-gradient(135deg, #FFFFFF 0%, #F6E8B1 100%);
         }
 
+        /* Desktop: Tall rectangles (height > width) */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-bottom: 50px;
         }
@@ -355,12 +359,13 @@
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
         }
 
+        /* Desktop: Tall rectangles */
         .product-img {
-            height: 300px;
+            height: 420px; /* Taller for desktop */
             overflow: hidden;
             background: linear-gradient(45deg, #D9B8FF, #F6E8B1);
         }
@@ -401,18 +406,18 @@
             line-height: 1.6;
         }
 
-        /* HERO 4 SECTION - Contact Hero - Mobile Responsive */
+        /* HERO 4 SECTION - LIGHT PURPLE BACKGROUND */
         .hero4-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #8A2BE2 0%, #1A1A2E 100%);
-            color: white;
+            background: linear-gradient(135deg, #E6D4FF 0%, #D4C2FF 100%); /* Light purple */
+            color: #1A1A2E;
             text-align: center;
         }
 
         .hero4-title {
             font-size: 2.2rem;
             margin-bottom: 25px;
-            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            background: linear-gradient(135deg, #8A2BE2 0%, #9B4DFF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -426,38 +431,43 @@
 
         .contact-card {
             padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 12px;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.2);
             transition: all 0.3s ease;
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .contact-icon {
             font-size: 36px;
-            color: #FFD700;
+            color: #8A2BE2;
             margin-bottom: 15px;
         }
 
         .contact-card h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
-            color: white;
+            color: #1A1A2E;
         }
 
         .contact-card p {
-            color: #F6E8B1;
+            color: #4A4A6A;
             font-size: 0.95rem;
             opacity: 0.9;
             line-height: 1.5;
         }
 
-        /* FOOTER SECTION - Mobile Responsive */
+        .hero4-section .btn {
+            background: linear-gradient(135deg, #8A2BE2 0%, #9B4DFF 100%);
+            color: white;
+        }
+
+        /* FOOTER SECTION */
         .footer-section {
             background: #1A1A2E;
             color: white;
@@ -484,65 +494,74 @@
             line-height: 1.5;
         }
 
-        /* MOBILE RESPONSIVE BREAKPOINTS */
+        /* =================== */
+        /* MOBILE RESPONSIVENESS */
+        /* =================== */
+
+        /* For tablets and mobiles */
         @media (max-width: 992px) {
+            /* Show hamburger, hide regular nav */
             .nav-links {
-                position: fixed;
-                top: 0;
-                left: -100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
                 width: 100%;
-                height: 100vh;
                 background: linear-gradient(135deg, #8A2BE2 0%, #000000 100%);
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                gap: 30px;
-                transition: all 0.4s ease;
-                z-index: 1000;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, padding 0.4s ease;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                border-top: 2px solid #FFD700;
             }
 
             .nav-links.active {
-                left: 0;
+                max-height: 300px;
+                padding: 20px 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
             }
 
             .nav-links a {
-                font-size: 1.4rem;
-                color: white;
-                padding: 15px 0;
+                display: block;
+                padding: 15px 20px;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
             }
 
             .hamburger {
                 display: flex;
             }
 
-            .hero1-title {
-                font-size: 2.2rem;
-            }
-
+            /* Hero 1 adjustments for tablet */
             .hero1-content {
-                left: 30px;
-                right: 30px;
-                max-width: calc(100% - 60px);
-                padding: 30px 25px;
-                text-align: center;
+                left: 40px;
+                right: 40px;
+                max-width: calc(100% - 80px);
+                padding: 35px 30px;
             }
 
-            /* HERO 3 - Keep side-by-side on tablets */
-            .hero3-content {
-                gap: 40px;
+            .hero1-title {
+                font-size: 2.5rem;
             }
 
-            .hero3-text h2 {
-                font-size: 2rem;
-            }
-
-            .hero3-image img {
-                height: 350px;
-            }
-            
-            /* Products grid - 2 columns on tablets */
+            /* Products grid for tablet: 2 columns */
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-img {
+                height: 350px; /* Still tall but adjusted */
             }
         }
 
@@ -553,8 +572,16 @@
                 margin-top: 70px;
             }
 
+            .hero1-content {
+                left: 25px;
+                right: 25px;
+                max-width: calc(100% - 50px);
+                padding: 30px 25px;
+                backdrop-filter: blur(8px);
+            }
+
             .hero1-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .hero1-subtitle {
@@ -572,31 +599,14 @@
                 margin-bottom: 10px;
             }
 
-            .hero1-content {
-                left: 20px;
-                right: 20px;
-                max-width: calc(100% - 40px);
-                padding: 30px 25px;
-                top: 50%;
-                transform: translateY(-50%);
-                text-align: center;
+            /* Products grid for mobile: 2 columns */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
 
-            /* HERO 3 - Adjust for mobile */
-            .hero3-content {
-                gap: 30px;
-            }
-
-            .hero3-text h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero3-text p {
-                font-size: 1rem;
-            }
-
-            .hero3-image img {
-                height: 300px;
+            .product-img {
+                height: 300px; /* Adjusted for mobile */
             }
 
             .section-title h2 {
@@ -608,24 +618,13 @@
                 padding: 0 15px;
             }
 
-            /* Features grid - 1 column on mobile */
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
 
-            /* Products grid - 2 columns on mobile */
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
             .feature-card {
                 padding: 30px 20px;
-            }
-
-            .product-img {
-                height: 250px;
             }
 
             .logo-text {
@@ -643,41 +642,28 @@
             .footer-logo {
                 font-size: 2rem;
             }
-
-            section {
-                padding: 60px 0;
-            }
         }
 
         @media (max-width: 640px) {
-            /* HERO 3 - Switch to column layout on small mobile */
-            .hero3-content {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .hero3-content {
-                flex-direction: column !important;
+            .hero1-content {
+                text-align: center;
+                left: 15px;
+                right: 15px;
+                max-width: calc(100% - 30px);
             }
 
-            .hero3-text h2 {
-                font-size: 1.6rem !important;
-                text-align: center;
+            .hero1-title {
+                font-size: 1.8rem;
             }
-            
-            .hero3-text p {
-                font-size: 0.95rem !important;
-                text-align: center;
+
+            /* Products grid for small mobile: still 2 columns */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
-            
-            .hero3-image img {
-                height: 280px;
-            }
-            
-            .btn {
-                margin: 0 auto;
-                display: block;
-                max-width: 250px;
+
+            .product-img {
+                height: 250px;
             }
         }
 
@@ -696,18 +682,7 @@
             }
 
             .hero1-content {
-                left: 15px;
-                right: 15px;
-                max-width: calc(100% - 30px);
                 padding: 25px 20px;
-            }
-
-            .hero3-text h2 {
-                font-size: 1.5rem;
-            }
-
-            .hero3-image img {
-                height: 250px;
             }
 
             .section-title h2 {
@@ -730,66 +705,30 @@
             .navbar {
                 padding: 12px 0;
             }
-            
-            /* Products grid - 2 columns on very small mobile */
+
+            /* Products grid for very small mobile */
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                gap: 10px;
             }
-            
+
             .product-img {
                 height: 200px;
             }
-            
+
             .collection-purchase {
                 padding: 30px 15px;
             }
-            
+
             .collection-purchase h3 {
                 font-size: 1.4rem;
             }
         }
 
-        @media (max-width: 360px) {
-            .hero1-title {
-                font-size: 1.4rem;
-            }
-
-            .hero1-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .hero3-text h2 {
-                font-size: 1.4rem;
-            }
-
-            .hero3-image img {
-                height: 220px;
-            }
-
-            .section-title h2 {
-                font-size: 1.3rem;
-            }
-
-            .product-img {
-                height: 180px;
-            }
-            
-            /* Products grid - keep 2 columns but adjust gap */
-            .products-grid {
-                gap: 10px;
-            }
-        }
-
-        /* Prevent horizontal scroll on mobile */
+        /* Prevent horizontal scroll */
         html, body {
             max-width: 100%;
             overflow-x: hidden;
-        }
-
-        /* Smooth transitions for mobile menu */
-        .nav-links {
-            -webkit-overflow-scrolling: touch;
         }
     </style>
 </head>
@@ -803,6 +742,7 @@
                     <div class="logo-text">GRACE STORES</div>
                 </div>
                 
+                <!-- Desktop navigation - shown by default -->
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#hero1">Home</a></li>
                     <li><a href="#products">Collections</a></li>
@@ -810,6 +750,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 
+                <!-- Hamburger - hidden on desktop, shown on mobile -->
                 <div class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -818,23 +759,20 @@
     </header>
 
     <!-- HERO 1 SECTION - Fading Image Slider -->
-<section class="hero1-section" id="hero1">
-    
+    <section class="hero1-section" id="hero1">
         <!-- Slide 1 -->
         <div class="hero1-slide active" style="background-image: url('GS21.jpg');"></div>
-       
-    </div>
-    
-    <div class="container">
-        <div class="hero1-content">
-            <h1 class="hero1-title">Experience Luxury Fashion</h1>
-            <p class="hero1-subtitle">Immerse yourself in the world of premium fashion where every detail matters. Our collections are carefully curated to bring you the finest in luxury clothing and accessories.</p>
-            <div class="hero1-btns">
-                <a href="#products" class="btn">View Collections</a>
+        
+        <div class="container">
+            <div class="hero1-content">
+                <h1 class="hero1-title">Experience Luxury Fashion</h1>
+                <p class="hero1-subtitle">Immerse yourself in the world of premium fashion where every detail matters. Our collections are carefully curated to bring you the finest in luxury clothing and accessories.</p>
+                <div class="hero1-btns">
+                    <a href="#products" class="btn">View Collections</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- FEATURES SECTION -->
     <section class="features-section" id="features">
@@ -887,7 +825,7 @@
                     </div>
                 </div>
 
-                 <div class="product-card">
+                <div class="product-card">
                     <div class="product-img">
                         <img src="GS19.jpeg" alt="Collection 2">
                     </div>
@@ -895,7 +833,7 @@
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="GS3.jpeg" alt="Collection 2">
+                        <img src="GS3.jpeg" alt="Collection 3">
                     </div>
                 </div>
                 
@@ -907,11 +845,11 @@
 
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="GS4.jpeg" alt="Collection 3">
+                        <img src="GS4.jpeg" alt="Collection 4">
                     </div>
                 </div>
 
-                 <div class="product-card">
+                <div class="product-card">
                     <div class="product-img">
                         <img src="GS18.jpeg" alt="Collection 7">
                     </div>
@@ -919,25 +857,25 @@
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="GS5.jpeg" alt="Collection 4">
+                        <img src="GS5.jpeg" alt="Collection 5">
                     </div>
                 </div>
 
-                 <div class="product-card">
+                <div class="product-card">
                     <div class="product-img">
-                        <img src="GS15.jpeg" alt="Collection 2">
+                        <img src="GS15.jpeg" alt="Collection 8">
                     </div>
                 </div>
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="GS6.jpeg" alt="Collection 5">
+                        <img src="GS6.jpeg" alt="Collection 9">
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="GS20.jpeg" alt="Collection 8">
+                        <img src="GS20.jpeg" alt="Collection 10">
                     </div>
                 </div>
             </div>
@@ -953,7 +891,7 @@
         </div>
     </section>
 
-    <!-- HERO 4 SECTION - Contact -->
+    <!-- HERO 4 SECTION - Contact with LIGHT PURPLE background -->
     <section class="hero4-section" id="contact">
         <div class="container">
             <h2 class="hero4-title">Contact Grace Stores</h2>
@@ -1002,11 +940,12 @@
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Mobile Navigation Toggle - Dropdown version
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
             navLinks.classList.toggle('active');
             hamburger.innerHTML = navLinks.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
@@ -1019,6 +958,14 @@
                 navLinks.classList.remove('active');
                 hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            }
         });
         
         // Smooth scrolling with offset for fixed header
@@ -1038,24 +985,6 @@
                 }
             });
         });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // Prevent scrolling when mobile menu is open
-        navLinks.addEventListener('touchmove', (e) => {
-            if (navLinks.classList.contains('active')) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-
-       
     </script>
 </body>
 </html>
