@@ -158,17 +158,55 @@
             background: linear-gradient(135deg, #F3E6FF 0%, #F6E8B1 100%);
         }
 
-        .hero1-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center 10% !important;
-            background-repeat: no-repeat;
-        }
+        /* HERO 1 SECTION - Fading Image Slider */
+.hero1-section {
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 75px;
+}
 
+/* Image slider container */
+.hero1-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual slides */
+.hero1-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 8%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Active slide */
+.hero1-slide.active {
+    opacity: 1;
+}
+
+/* Add this background overlay for better text readability */
+.hero1-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
         .hero1-content {
             position: relative;
             z-index: 2;
@@ -212,11 +250,12 @@
         
 
         /* FEATURES SECTION - Mobile Responsive */
-        .features-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #FFFFFF 0%, #D9B8FF 100%);
-        }
 
+      .features-section {
+    background: whitesmoke;
+;
+}
+       
         .section-title {
             text-align: center;
             margin-bottom: 50px;
@@ -296,7 +335,7 @@
         /* PRODUCTS SECTION - UPDATED - Mobile Responsive */
         .products-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #F6E8B1 0%, #FFFFFF 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #F6E8B1 100%);
         }
 
         .products-grid {
@@ -778,21 +817,24 @@
         </div>
     </header>
 
-    <!-- HERO 1 SECTION - Main Hero with left-aligned content -->
-    <section class="hero1-section" id="hero1">
-        <div class="hero1-bg" style="background-image: url('GS11.jpg');"></div>
-        <div class="container">
-            <div class="hero1-content">
-                <h1 class="hero1-title">Experience Luxury Fashion</h1>
-                <p class="hero1-subtitle">Immerse yourself in the world of premium fashion where every detail matters. Our collections are carefully curated to bring you the finest in luxury clothing and accessories.</p>
-                <div class="hero1-btns">
-                    <a href="#products" class="btn">View Collections</a>
-                </div>
+    <!-- HERO 1 SECTION - Fading Image Slider -->
+<section class="hero1-section" id="hero1">
+    
+        <!-- Slide 1 -->
+        <div class="hero1-slide active" style="background-image: url('GS21.jpg');"></div>
+       
+    </div>
+    
+    <div class="container">
+        <div class="hero1-content">
+            <h1 class="hero1-title">Experience Luxury Fashion</h1>
+            <p class="hero1-subtitle">Immerse yourself in the world of premium fashion where every detail matters. Our collections are carefully curated to bring you the finest in luxury clothing and accessories.</p>
+            <div class="hero1-btns">
+                <a href="#products" class="btn">View Collections</a>
             </div>
         </div>
-    </section>
-
-   
+    </div>
+</section>
 
     <!-- FEATURES SECTION -->
     <section class="features-section" id="features">
@@ -844,6 +886,12 @@
                         <img src="GS2.jpeg" alt="Collection 1">
                     </div>
                 </div>
+
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS19.jpeg" alt="Collection 2">
+                    </div>
+                </div>
                 
                 <div class="product-card">
                     <div class="product-img">
@@ -853,7 +901,19 @@
                 
                 <div class="product-card">
                     <div class="product-img">
+                        <img src="GS17.jpeg" alt="Collection 6">
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
                         <img src="GS4.jpeg" alt="Collection 3">
+                    </div>
+                </div>
+
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS18.jpeg" alt="Collection 7">
                     </div>
                 </div>
                 
@@ -862,10 +922,22 @@
                         <img src="GS5.jpeg" alt="Collection 4">
                     </div>
                 </div>
+
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS15.jpeg" alt="Collection 2">
+                    </div>
+                </div>
                 
                 <div class="product-card">
                     <div class="product-img">
                         <img src="GS6.jpeg" alt="Collection 5">
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS20.jpeg" alt="Collection 8">
                     </div>
                 </div>
             </div>
@@ -981,6 +1053,9 @@
                 e.preventDefault();
             }
         }, { passive: false });
+
+
+       
     </script>
 </body>
 </html>
