@@ -561,7 +561,7 @@
         }
 
         /* Mobile */
-        @media (max-width: 768px) {
+        @media (min-width: 700px) {
             .hero1-section {
                 height: 80vh;
                 min-height: 500px;
@@ -577,7 +577,7 @@
             }
 
             .hero1-title {
-                font-size: 3.4rem;
+                font-size: 4.4rem;
             }
 
             .hero1-subtitle {
@@ -704,17 +704,8 @@
   .hero1-content {
     padding: 40px 30px !important;
   }
-  
-  /* Adjust product grid for touch devices */
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-  }
-  
-  .product-img {
-    height: 350px !important;
-  }
-}
+} 
+ 
 
 /* For larger mobile screens in desktop mode */
 @media (min-width: 1000px) and (hover: none) and (pointer: coarse) {
