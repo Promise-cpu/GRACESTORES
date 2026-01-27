@@ -1078,5 +1078,23 @@
             showSlide(currentSlide);
         }, 5000);
     </script>
+
+   <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAy9QzZEUfIwY2XWwTp1_jtlxQ5gQ-YlUc",
+  authDomain: "web-archive-international.firebaseapp.com",
+  projectId: "web-archive-international",
+  storageBucket: "web-archive-international.firebasestorage.app",
+  messagingSenderId: "130594744574",
+  appId: "1:130594744574:web:5fcb63da0a10bf8999ddaf",
+  measurementId: "G-1QRLD89K26"
+};
+
+ const app = initializeApp(firebaseConfig);
+  console.log("Firebase connected");
+</script>
+
 </body>
 </html>
