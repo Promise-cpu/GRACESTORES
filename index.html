@@ -731,14 +731,60 @@
             }
         }
 
-        /*FOR PHONES IN DESKTOP MODE*/
-        @media (min-width: 900px) and (hover: none) {
+        /* FIX FOR PHONES IN DESKTOP MODE - Rectangular images instead of square */
+        /* This media query targets touch devices with larger screens (mobile phones in landscape/horizontal mode) */
+        @media (min-width: 900px) and (max-width: 1200px) and (hover: none) and (pointer: coarse) {
             .hero1-title {
                 font-size: 5.0rem;
             }
             
             .hero1-subtitle {
                 font-size: 2.5rem;
+            }
+
+            .hero1-btns .btn {
+                padding: 16px 24px;
+                font-size: 2.1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            /* Key fix: Maintain rectangular product images for mobile desktop mode */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .product-img {
+                height: 500px; /* Tall rectangular images for mobile desktop mode */
+            }
+            
+            /* Adjust other elements for better mobile desktop viewing */
+            .container {
+                padding: 0 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title p {
+                font-size: 1.8rem;
+                max-width: 900px;
+            }
+            
+            .collection-purchase h3 {
+                font-size: 3rem;
+            }
+            
+            .collection-purchase p {
+                font-size: 1.8rem;
+                max-width: 900px;
+            }
+            
+            .collection-purchase .btn {
+                font-size: 2rem;
+                padding: 25px 40px;
             }
         }
 
@@ -892,6 +938,18 @@
                 <div class="product-card">
                     <div class="product-img">
                         <img src="GS20.jpeg" alt="Collection 10">
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS23.jpeg" alt="Collection 11">
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="GS12.jpeg" alt="Collection 12">
                     </div>
                 </div>
             </div>
