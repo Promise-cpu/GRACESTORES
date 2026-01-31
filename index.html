@@ -122,7 +122,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 24px;
             font-weight: 800;
-            color: #d09707;
+            color: white;
         }
 
         .nav-links {
@@ -406,12 +406,13 @@
             line-height: 1.6;
         }
 
-        /* Contact Section */
+        /* Contact Section - ADDED MARGIN TOP TO FIX SPACING ISSUE */
         .hero4-section {
             padding: 80px 0;
             background: rgb(239, 224, 150);
             color: var(--text-dark);
             text-align: center;
+          
         }
 
         .hero4-title {
@@ -628,6 +629,10 @@
             .feature-card {
                 padding: 30px 20px;
             }
+            
+            .hero4-section {
+                margin-top: 40px; /* Adjusted for mobile */
+            }
         }
 
         /* Small Mobile */
@@ -680,6 +685,10 @@
 
             .collection-purchase h3 {
                 font-size: 1.4rem;
+            }
+            
+            .hero4-section {
+                margin-top: 30px; /* Adjusted for small mobile */
             }
         }
 
@@ -827,7 +836,7 @@
         
         <div class="container">
             <div class="hero1-content">
-                <h1 class="hero1-title">Experience Luxury Fashion</h1>
+                <h1 class="hero1-title">Redefining Men's Fashion</h1>
                 <p class="hero1-subtitle">Immerse yourself in the world of premium fashion where every detail matters. Our collections are carefully curated to bring you the finest in luxury clothing and accessories.</p>
                 <div class="hero1-btns">
                     <a href="#products" class="btn">View Collections</a>
@@ -954,14 +963,20 @@
                 </div>
             </div>
             
-            <!-- Single Purchase Button -->
-            <div class="collection-purchase">
-                <h3>Ready to Elevate Your Style?</h3>
-                <p>Browse our exclusive collections and message us on WhatsApp to purchase any item. We offer personalized service and worldwide shipping.</p>
-                <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I%20would%20like%20to%20purchase%20from%20your%20collections." target="_blank" class="btn btn-purple">
-                    <i class="fab fa-whatsapp"></i> &nbsp; Purchase Now
-                </a>
-            </div>
+           <!-- Single Purchase Button -->
+<div class="collection-purchase">
+    <h3>Ready to Elevate Your Style?</h3>
+    <p>
+        Browse our exclusive collections and message us on WhatsApp to purchase any item.
+        We offer personalized service and worldwide shipping.
+    </p>
+
+    <a href="https://wa.me/9067842576?text=Hello%20Grace%20Stores!%20I%20would%20like%20to%20purchase%20from%20your%20collections."
+       target="_blank"
+       class="btn btn-purple">
+        <i class="fab fa-whatsapp"></i> &nbsp; Purchase Now
+    </a>
+</div>
         </div>
     </section>
 
@@ -985,20 +1000,21 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <h3>Call Us</h3>
-                    <p>(555) 123-4567<br>Mon-Fri: 10AM-8PM EST</p>
+                    <p>(234) 906-784-2576</p>
                 </div>
                 
+                <!-- Updated: Changed Email to Working Hours -->
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Email Us</h3>
-                    <p>contact@gracestores.com<br>info@gracestores.com</p>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Friday<br>8:00 AM - 6:00 PM</p>
                 </div>
             </div>
             
             <div style="margin-top: 40px;">
-                <a href="https://wa.me/1234567890?text=Hello%20Grace%20Stores%21%20I%20would%20like%20to%20inquire%20about%20your%20collections." target="_blank" class="btn">
+                <a href="https://wa.me/9067842576?text=Hello%20Grace%20Stores%21%20I%20would%20like%20to%20inquire%20about%20your%20collections." target="_blank" class="btn">
                     <i class="fab fa-whatsapp"></i> &nbsp; Message on WhatsApp
                 </a>
             </div>
